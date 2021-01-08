@@ -2,6 +2,7 @@
 @section("title", "Crudzao")
 
 @section("content")
-<h1>teste</h1>
+
+Produtos e Cadastro
 
 @endsection

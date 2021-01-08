@@ -35,7 +35,11 @@ class CadastroController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request -> all());
+        Cadastro::create([
+            'nome'=> $request->nome,
+            'idade'=> $request->idade,
+        ]);
+        return "Cadastro Criado com Sucesso";
     }
 
     /**

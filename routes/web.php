@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\ProdutosController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,14 @@ use App\Http\Controllers\CadastroController;
 */
 Route::get('/', [CadastroController::class, 'index']);
 
-Route::get('/create', [CadastroController::class, 'create']);
-Route::post('/create', [CadastroController::class, 'store'])->name('registrar_cadastro');
+Route::get('/cadastro/create', [CadastroController::class, 'create']);
+Route::post('cadastro/create', [CadastroController::class, 'store'])->name('registrar_cadastro');
+
+
+
+Route::get('/produtos', [ProdutosController::class, 'index']);
+Route::get('/produtos/show/{id}', [ProdutosController::class, 'show']);
+
+
+Route::get('/produtos/create', [ProdutosController::class, 'create']);
+Route::post('/produtos/create', [ProdutosController::class, 'store'])->name('registrar_produto');
