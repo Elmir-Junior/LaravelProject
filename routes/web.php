@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,9 @@ use App\Http\Controllers\ProdutosController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [CadastroController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/cadastro', [CadastroController::class, 'index']);
 Route::get('/cadastro/create', [CadastroController::class, 'create']);
 Route::post('cadastro/create', [CadastroController::class, 'store'])->name('registrar_cadastro');
 

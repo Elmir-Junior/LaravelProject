@@ -14,7 +14,9 @@ class CadastroController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $cadastro = Cadastro::all() ->toArray();
+        return view('CRUD.index', compact('cadastro')); 
+        
     }
 
     /**
